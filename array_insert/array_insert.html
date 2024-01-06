@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Array Data</title>
+  </head>
+  <body>
+    <input type="text" id="position" placeholder="Enter position" />
+    <input id="newElem" type="text" placeholder="Enter new element" />
+    <button onclick="insertEl()">Insert</button>
+  </body>
+  <script>
+    /* With logic
+     let data = [60, 30, 10, 67, 40];
+     let newEl = 50;
+     let position = 2;
+     console.log(data);
+
+     for (let i = data.length - 1; i >= 0; i--) {
+       console.log(data[i]);
+       if (i >= position) {
+         data[i + 1] = data[i];
+         if (i === position) data[i] = newEl;
+       }
+     }
+     console.log(data);
+    */
+
+    /* With function
+    let data = [60, 30, 10, 67, 40];
+    console.log(data);
+    data.splice(2, 0, 2000);
+    console.log(data);
+     */
+    function insertEl() {
+      let data = [60, 30, 10, 67, 40];
+      console.log(data);
+      let newEl = parseInt(document.getElementById("newElem").value);
+      let position = parseInt(document.getElementById("position").value);
+      for (let i = data.length - 1; i >= 0; i--) {
+        if (i >= position) {
+          data[i + 1] = data[i];
+          if (i === position) {
+            data[i] = newEl;
+          }
+        }
+      }
+      console.log(data);
+    }
+  </script>
+</html>
